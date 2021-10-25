@@ -1,8 +1,8 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import harry from '../../assets/harry.png'
 import harryOnBroom from '../../assets/harryOnBroom.png'
-import dumbledore from '../../assets/dumbledore.png'
 import style from './Home.module.scss'
 
 export const Home = () => {
@@ -19,10 +19,11 @@ export const Home = () => {
         className={style.harryOnBroomImg}
       />
       <div className={style.home__btn}>
-        {/* <img src={dumbledore} alt="dumbledore" className={style.dumbledore} /> */}
-        <Button variant="outlined" className={style.start}>
-          Войти
-        </Button>
+        <Link to={'/characters'}>
+          <Button variant="outlined" className={style.start}>
+            Войти
+          </Button>
+        </Link>
       </div>
     </div>
   )

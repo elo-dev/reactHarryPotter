@@ -1,13 +1,21 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
-:root{
-    --font-header: 'CheshirskiyCat';
-    --font-text: 'Sirona';
+:root {
+  --font-header: 'CheshirskiyCat';
+  --font-text: 'Sirona';
 
-    --color-text: #41276e;
+  --color-text: #41276e;
+}
+
+@mixin header-title {
+  font-family: var(--font-header);
+  font-size: 40px;
+  text-shadow: 0 0 10px #fff, 0 3px 11px #ffff00;
+  text-align: center;
 }
 
 @font-face {

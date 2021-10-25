@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+.students {
+  h1 {
+    @include header-title;
+  }
+  .back {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    align-items: center;
+    .backIcon {
+      padding-right: 10px;
+      width: 25px;
+      height: 25px;
+    }
+    p {
+        padding-top: 4px;
+      color: var(--color-text);
+      font-family: var(--font-text);
+      letter-spacing: 2px;
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+}
