@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --font-header: 'CheshirskiyCat';
+    --font-text: 'Sirona';
+
+    --color-text: #41276e;
+}
+
+@font-face {
+  font-family: 'CheshirskiyCat';
+  src: url('./fonts/CheshirskiyCat.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Sirona';
+  src: url('./fonts/sirona.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}

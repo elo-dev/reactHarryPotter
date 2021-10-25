@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  right: 110px;
+  &__nav {
+      margin-right: 20px !important;
+    li {
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        font-family: var(--font-text);
+        color: var(--color-text);
+        &:hover {
+          color: rgba(var(--color-text), 0.5);
+        }
+      }
+    }
+  }
+}

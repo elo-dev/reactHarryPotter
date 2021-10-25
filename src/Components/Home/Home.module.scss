@@ -1,0 +1,90 @@
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  height: calc(100vh - 100px);
+  margin: 50px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #cfcfcf;
+  &__title {
+    margin-bottom: 80px;
+    text-align: center;
+    h1 {
+      font-family: var(--font-header);
+      font-size: 55px;
+      padding-bottom: 15px;
+      text-shadow: 0 0 10px #fff, 0 3px 11px #ffff00;
+    }
+    span {
+      color: rgba(#797979, 0.75);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
+  .harryImg {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 120px;
+    height: 175px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .harryOnBroomImg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 255px;
+    height: 170px;
+    object-fit: cover;
+  }
+  &__btn {
+    position: absolute !important;
+    bottom: 25%;
+    transition: 3s;
+    z-index: 1;
+    &::before {
+      content: '';
+      display: block;
+      opacity: 0;
+      z-index: -1;
+      animation: shimmy 3s infinite;
+      animation-direction: alternate;
+    }
+    &:hover {
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: url('../../assets/dumbledore.png');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        top: -46px;
+        right: -20px;
+        opacity: 1;
+      }
+      box-shadow: 0 0 10px #fff, 0 0 30px rgba(#77b2ff, 0.7);
+    }
+    .start {
+      background-color: #f2f2f2;
+      width: 100px;
+      height: 40px;
+      &:hover{
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}
+
+@keyframes shimmy {
+  0% {
+    transform: translate(0, 0);    
+  }
+  100% {
+    transform: translate(0, 10px);
+  }
+}
