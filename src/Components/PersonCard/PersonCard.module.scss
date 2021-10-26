@@ -1,5 +1,8 @@
 .list__item {
   padding: 10px;
+  .list__card{
+    cursor: pointer;
+  }
   .list__image {
     height: 200px;
   }

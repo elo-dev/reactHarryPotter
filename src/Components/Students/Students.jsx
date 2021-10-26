@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { API_CHARACTERS_STUDENTS } from '../../constants/constants'
 import { StudentsList } from './StudentsList/StudentsList'
 import { Loading } from '../Loading/Loading'
@@ -6,10 +6,16 @@ import { getApiResource } from '../../network/api'
 import style from './Students.module.scss'
 import backIcon from '../../assets/back/back.svg'
 import { Link, useHistory } from 'react-router-dom'
+import { PaginationPage } from '../Pagination/Pagination'
+import { withPagination } from '../../hoc-helper/withPagination'
 
-export const Students = () => {
-  const [students, setStudents] = useState(null)
-
+const Students = ({
+  people,
+  setPeople,
+  currentPeople,
+  peoplePerPage,
+  handlePagination,
+}) => {
   const getResource = async (url) => {
     const res = getApiResource(url)
 
@@ -23,11 +29,11 @@ export const Students = () => {
             house,
             image,
             wizard,
-            hairColour
+            hairColour,
           }
         }
       )
-      setStudents(students)
+      setPeople(students)
     })
   }
 
@@ -44,16 +50,26 @@ export const Students = () => {
 
   return (
     <div className={style.students}>
-    <h1>Студенты</h1>
-    <Link to='' onClick={handleGoBack} className={style.back}>
+      <h1>Студенты</h1>
+      <Link to="" onClick={handleGoBack} className={style.back}>
         <img src={backIcon} alt="back" className={style.backIcon} />
         <p>Назад</p>
-    </Link>
+      </Link>
 
-    {students 
-      ? <StudentsList students={students} />
-      : <Loading/>
-    }
+      {people ? (
+        <>
+          <StudentsList students={currentPeople} />
+          <PaginationPage
+            peoplePerPage={peoplePerPage}
+            totalPeople={people.length}
+            handlePagination={handlePagination}
+          />
+        </>
+      ) : (
+        <Loading />
+      )}
     </div>
   )
 }
+
+export default withPagination(Students)

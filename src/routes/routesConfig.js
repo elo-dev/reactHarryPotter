@@ -1,6 +1,6 @@
-import { Characters } from "../Components/Characters/Characters";
+import Characters from "../Components/Characters/Characters";
 import { Home } from "../Components/Home/Home";
-import { Students } from "../Components/Students/Students";
+import Students from "../Components/Students/Students";
 
 export const routesConfig = [
     {

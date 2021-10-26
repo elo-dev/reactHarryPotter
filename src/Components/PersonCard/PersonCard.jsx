@@ -12,7 +12,7 @@ export const PersonCard = ({ items }) => {
 
   return (
     <li className={style.list__item}>
-      <Card sx={{ maxWidth: 120, maxHeight: 270 }} onClick={handleOpen}>
+      <Card sx={{ maxWidth: 120, maxHeight: 270 }} onClick={handleOpen} className={style.list__card}>
         <CardMedia
           className={style.list__image}
           component="img"
