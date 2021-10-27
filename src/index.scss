@@ -4,11 +4,29 @@
   text-decoration: none;
 }
 
+body{
+  background-color: var(--theme-default-background)
+}
+
 :root {
   --font-header: 'CheshirskiyCat';
   --font-text: 'Sirona';
 
-  --color-text: #41276e;
+  --theme-light-header: #41276e;
+  --theme-dark-header: #c6d4dd;
+  --theme-default-header: var(--theme-light-header);
+
+  --theme-light-background: white;
+  --theme-dark-background: rgba(0, 0, 0, 0.95);
+  --theme-default-background: var(--theme-light-background);
+
+  --theme-light-container: #f2f2f2;
+  --theme-dark-container: rgba(47, 47, 47, 0.95);
+  --theme-default-container: var(--theme-light-container);
+
+  --theme-light-filter: brightness(100%);
+  --theme-dark-filter: brightness(80%);
+  --theme-default-filter: var(--theme-light-filter);
 }
 
 @mixin header-title {

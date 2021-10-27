@@ -27,6 +27,7 @@ export const ModalPerson = ({ open, handleClose, items }) => {
 
   return (
     <Modal
+      className={style.modal}
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       open={open}
@@ -38,7 +39,7 @@ export const ModalPerson = ({ open, handleClose, items }) => {
       }}
     >
       <Fade in={open}>
-        <Box sx={box}>
+        <Box sx={box} className={style.modal__box}>
           <CardMedia
             sx={{ maxWidth: 160, maxHeight: 260 }}
             component="img"

@@ -12,9 +12,9 @@
         text-decoration: none;
         cursor: pointer;
         font-family: var(--font-text);
-        color: var(--color-text);
+        color: var(--theme-default-header);
         &:hover {
-          color: rgba(var(--color-text), 0.5);
+          color: rgba(var(--theme-default-header), 0.5);
         }
       }
     }

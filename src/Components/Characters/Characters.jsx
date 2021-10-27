@@ -1,43 +1,16 @@
-import React, { useEffect } from 'react'
-import { getApiResource } from '../../network/api'
+import React from 'react'
 import { API_CHARACTERS } from '../../constants/constants'
 import style from './Characters.module.scss'
 import { CharactersList } from './CharactersList/CharactersList'
 import { Loading } from '../Loading/Loading'
 import { PaginationPage } from '../Pagination/Pagination'
-import { withPagination } from '../../hoc-helper/withPagination'
+import usePagination from '../../hooks/usePagination'
+import useGetRecource from '../../hooks/useGetResource'
 
-const Characters = ({
-  people,
-  setPeople,
-  currentPeople,
-  peoplePerPage,
-  handlePagination
-}) => {
-  const getResource = async (url) => {
-    const res = getApiResource(url)
+const Characters = () => {
 
-    res.then((response) => {
-      const charactersList = response.map(
-        ({ name, actor, gender, house, image, wizard, hairColour }) => {
-          return {
-            name,
-            actor,
-            gender,
-            house,
-            image,
-            wizard,
-            hairColour,
-          }
-        }
-      )
-      setPeople(charactersList)
-    })
-  }
-
-  useEffect(() => {
-    getResource(API_CHARACTERS)
-  }, [])
+  const { people } = useGetRecource(API_CHARACTERS)
+  const { currentPeople, handlePagination, peoplePerPage } = usePagination({people})
 
   return (
     <div className={style.characters}>
@@ -58,4 +31,4 @@ const Characters = ({
   )
 }
 
-export default withPagination(Characters)
+export default Characters

@@ -1,13 +1,18 @@
 @import '../../index.scss';
 
-.modal__info {
-    padding-left: 10px;
-  h2 {
-    font-family: var(--font-text);
-    color: var(--color-text);
-    padding-bottom: 20px;
+.modal {
+  &__box{
+    filter: var(--theme-default-filter);
   }
-  p:not(:last-child){
+  &__info {
+    padding-left: 10px;
+    h2 {
+      font-family: var(--font-text);
+      color: var(--theme-light-header);
+      padding-bottom: 20px;
+    }
+    p:not(:last-child) {
       margin-bottom: 10px;
+    }
   }
 }

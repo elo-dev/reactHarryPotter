@@ -2,6 +2,7 @@
   padding: 10px;
   .list__card{
     cursor: pointer;
+    filter: var(--theme-default-filter);
   }
   .list__image {
     height: 200px;

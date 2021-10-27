@@ -16,13 +16,16 @@
     max-height: 10px;
     list-style: none;
     margin-right: 10px;
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--theme-default-header);
     border-radius: 50%;
-    font-size: 15px;
     padding: 10px;
+    overflow: hidden;
+    a{
+      font-size: 16px;
+      color: var(--theme-default-header);
+      &:hover{
+        color: rgba(var(--theme-default-header), .5);
+      }
+    }
   }
-}
-
-.active{
-  color: red !important;
 }

@@ -1,47 +1,24 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { API_CHARACTERS_STUDENTS } from '../../constants/constants'
 import { StudentsList } from './StudentsList/StudentsList'
 import { Loading } from '../Loading/Loading'
-import { getApiResource } from '../../network/api'
 import style from './Students.module.scss'
 import backIcon from '../../assets/back/back.svg'
 import { Link, useHistory } from 'react-router-dom'
 import { PaginationPage } from '../Pagination/Pagination'
-import { withPagination } from '../../hoc-helper/withPagination'
+import usePagination from '../../hooks/usePagination'
+import useGetRecource from '../../hooks/useGetResource'
 
-const Students = ({
-  people,
-  setPeople,
-  currentPeople,
-  peoplePerPage,
-  handlePagination,
-}) => {
-  const getResource = async (url) => {
-    const res = getApiResource(url)
+const Students = () => {
 
-    res.then((response) => {
-      const students = response.map(
-        ({ name, actor, gender, house, image, wizard, hairColour }) => {
-          return {
-            name,
-            actor,
-            gender,
-            house,
-            image,
-            wizard,
-            hairColour,
-          }
-        }
-      )
-      setPeople(students)
-    })
-  }
-
-  useEffect(() => {
-    getResource(API_CHARACTERS_STUDENTS)
-  }, [])
+  const { people, error } = useGetRecource(API_CHARACTERS_STUDENTS)
+  const { currentPeople, handlePagination, peoplePerPage } = usePagination({people})
 
   const history = useHistory()
+
+  if(error){
+    return null
+  }
 
   const handleGoBack = (e) => {
     e.preventDefault()
@@ -72,4 +49,4 @@ const Students = ({
   )
 }
 
-export default withPagination(Students)
+export default Students
