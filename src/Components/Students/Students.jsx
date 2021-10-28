@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { API_CHARACTERS_STUDENTS } from '../../constants/constants'
 import { StudentsList } from './StudentsList/StudentsList'
 import { Loading } from '../Loading/Loading'
@@ -8,17 +8,25 @@ import { Link, useHistory } from 'react-router-dom'
 import { PaginationPage } from '../Pagination/Pagination'
 import usePagination from '../../hooks/usePagination'
 import useGetRecource from '../../hooks/useGetResource'
+import SearchField from '../SearchField/SearchField'
 
 const Students = () => {
 
-  const { people, error } = useGetRecource(API_CHARACTERS_STUDENTS)
-  const { currentPeople, handlePagination, peoplePerPage } = usePagination({people})
+  const { people } = useGetRecource(API_CHARACTERS_STUDENTS)
+  const [valueInput, setValueInput] = useState('')
+
+  const filterPeople = people.filter((person) => {
+    return person.name.toLowerCase().includes(valueInput.toLowerCase())
+  })
+
+  const { currentPeople, handlePagination, peoplePerPage, setCurrentPage } =
+    usePagination({ filterPeople })
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [valueInput])
 
   const history = useHistory()
-
-  if(error){
-    return null
-  }
 
   const handleGoBack = (e) => {
     e.preventDefault()
@@ -28,17 +36,26 @@ const Students = () => {
   return (
     <div className={style.students}>
       <h1>Студенты</h1>
-      <Link to="" onClick={handleGoBack} className={style.back}>
-        <img src={backIcon} alt="back" className={style.backIcon} />
-        <p>Назад</p>
-      </Link>
+      <div className={style.students__option}>
+        <Link to="" onClick={handleGoBack} className={style.back}>
+          <img src={backIcon} alt="back" className={style.backIcon} />
+          <p>Назад</p>
+        </Link>
 
-      {people ? (
+        <SearchField
+          className={style.search}
+          setValueInput={setValueInput}
+          valueInput={valueInput}
+          totalPeople={filterPeople}
+        />
+      </div>
+
+      {people.length !== 0 ? (
         <>
           <StudentsList students={currentPeople} />
           <PaginationPage
             peoplePerPage={peoplePerPage}
-            totalPeople={people.length}
+            totalPeople={filterPeople.length}
             handlePagination={handlePagination}
           />
         </>

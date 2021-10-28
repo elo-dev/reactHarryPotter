@@ -4,4 +4,8 @@
   h1 {
     @include header-title;
   }
+  &__search{
+    position: absolute;
+    top: 20px;
+  }
 }

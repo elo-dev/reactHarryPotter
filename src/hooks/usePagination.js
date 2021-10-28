@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-const usePagination = ({ people }) => {
+const usePagination = ({ filterPeople }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [peoplePerPage] = useState(16)
 
   const lastPeopleIndex = currentPage * peoplePerPage
   const firstPeopleIndex = lastPeopleIndex - peoplePerPage
-  const currentPeople = people.slice(firstPeopleIndex, lastPeopleIndex)
+  const currentPeople = filterPeople.slice(firstPeopleIndex, lastPeopleIndex)
 
   const handlePagination = (e, pageNumber) => {
     e.preventDefault()
@@ -17,6 +17,7 @@ const usePagination = ({ people }) => {
     currentPeople,
     handlePagination,
     peoplePerPage,
+    setCurrentPage
   }
 }
 

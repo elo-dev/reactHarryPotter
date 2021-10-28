@@ -4,23 +4,28 @@
   h1 {
     @include header-title;
   }
-  .back {
-    position: absolute;
-    top: 25px;
+  &__option{
     display: flex;
-    align-items: center;
-    .backIcon {
-      padding-right: 10px;
-      width: 25px;
+    position: absolute;
+    top: 20px;
+    .back {
+      display: flex;
       height: 25px;
-    }
-    p {
-      padding-top: 4px;
-      color: var(--theme-default-header);
-      font-family: var(--font-text);
-      letter-spacing: 2px;
-      &:hover {
-        color: gray;
+      margin-top: 8px;
+      margin-right: 50px;
+      .backIcon {
+        padding-right: 10px;
+        width: 25px;
+        height: 25px;
+      }
+      p {
+        padding-top: 4px;
+        color: var(--theme-default-header);
+        font-family: var(--font-text);
+        letter-spacing: 2px;
+        &:hover {
+          color: gray;
+        }
       }
     }
   }
