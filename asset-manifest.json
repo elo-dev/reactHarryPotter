@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3af6c1d2.chunk.css",
+    "main.js": "/static/js/main.f80e0665.chunk.js",
+    "main.js.map": "/static/js/main.f80e0665.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b80fd67c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b80fd67c.js.map",
+    "static/js/2.a90348fd.chunk.js": "/static/js/2.a90348fd.chunk.js",
+    "static/js/2.a90348fd.chunk.js.map": "/static/js/2.a90348fd.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3af6c1d2.chunk.css.map": "/static/css/main.3af6c1d2.chunk.css.map",
+    "static/js/2.a90348fd.chunk.js.LICENSE.txt": "/static/js/2.a90348fd.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/sirona.9a9a57bb.otf",
+    "static/media/back.46f9b388.svg": "/static/media/back.46f9b388.svg",
+    "static/media/Home.module.scss": "/static/media/dumbledore.5e494545.png",
+    "static/media/harry.af1cdbea.png": "/static/media/harry.af1cdbea.png",
+    "static/media/harryOnBroom.e932b7fd.png": "/static/media/harryOnBroom.e932b7fd.png",
+    "static/media/loading.2fa479eb.gif": "/static/media/loading.2fa479eb.gif",
+    "static/media/no-photo.ccabdb5c.png": "/static/media/no-photo.ccabdb5c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b80fd67c.js",
+    "static/js/2.a90348fd.chunk.js",
+    "static/css/main.3af6c1d2.chunk.css",
+    "static/js/main.f80e0665.chunk.js"
+  ]
+}
