@@ -5,6 +5,9 @@
   z-index: 1;
   top: 20px;
   right: 40px;
+  .mobileMenu{
+    display: none;
+  }
   &__nav {
     margin-right: 20px !important;
     li {
@@ -18,5 +21,14 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mobileMenu{
+    display: block !important;
+  }
+  .header__nav{
+    display: none !important;
   }
 }

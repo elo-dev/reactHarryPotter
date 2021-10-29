@@ -7,5 +7,12 @@
   &__search{
     position: absolute;
     top: 20px;
+    width: 100px;
   }
+}
+
+@media screen and (max-width: 650px) {
+    .characters__search{
+      top: 70px !important;
+    }
 }

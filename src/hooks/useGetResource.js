@@ -37,7 +37,7 @@ const useGetRecource = (url) => {
     }
   }, [url])
 
-  return { ...people }
+  return { ...people, getResource, useGetRecource }
 }
 
 export default useGetRecource

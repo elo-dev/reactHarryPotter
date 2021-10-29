@@ -8,6 +8,9 @@
     display: flex;
     position: absolute;
     top: 20px;
+    .search{
+      margin-right: 50px;
+    }
     .back {
       display: flex;
       height: 25px;
@@ -28,5 +31,14 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .students__option{
+    display: block;
+  }
+  .back{
+    margin-bottom: 20px !important;
   }
 }

@@ -84,3 +84,14 @@
     transform: translate(0, 10px);
   }
 }
+
+@media screen and (max-width: 750px){
+    .harryOnBroomImg{
+      width: 225px !important;
+      height: 150px !important;
+    }
+    .harryImg{
+      width: 100px !important;
+      height: 155px !important;
+    }
+}
