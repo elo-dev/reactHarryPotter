@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactHarryPotter/static/css/main.5012a599.chunk.css",
-    "main.js": "/reactHarryPotter/static/js/main.a2954487.chunk.js",
-    "main.js.map": "/reactHarryPotter/static/js/main.a2954487.chunk.js.map",
+    "main.js": "/reactHarryPotter/static/js/main.c3a67ef8.chunk.js",
+    "main.js.map": "/reactHarryPotter/static/js/main.c3a67ef8.chunk.js.map",
     "runtime-main.js": "/reactHarryPotter/static/js/runtime-main.6113cfd1.js",
     "runtime-main.js.map": "/reactHarryPotter/static/js/runtime-main.6113cfd1.js.map",
     "static/js/2.a90348fd.chunk.js": "/reactHarryPotter/static/js/2.a90348fd.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.6113cfd1.js",
     "static/js/2.a90348fd.chunk.js",
     "static/css/main.5012a599.chunk.css",
-    "static/js/main.a2954487.chunk.js"
+    "static/js/main.c3a67ef8.chunk.js"
   ]
 }
