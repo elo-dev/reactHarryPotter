@@ -2,7 +2,7 @@
 
 ## Ссылки
 
- - `Project` [https://elo-dev.github.io/reactStarWars/](https://elo-dev.github.io/reactHarryPotter/)
+ - `Project` [https://elo-dev.github.io/reactHarryPotter/](https://elo-dev.github.io/reactHarryPotter/)
  - `Repository` https://github.com/elo-dev/reactHarryPotter
 
 ## Другие скрипты и команды
