@@ -1,11 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Button } from '@mui/material'
+import classNames from 'classnames'
 import style from './Pagination.module.scss'
 
 export const PaginationPage = ({
   handlePagination,
   peoplePerPage,
-  totalPeople
+  totalPeople,
+  handleNextBtn,
+  handlePrevBtn,
+  maxPageNumberLimit,
+  minPageNumberLimit,
+  currentPage,
 }) => {
   const pageNumbers = []
 
@@ -13,16 +19,31 @@ export const PaginationPage = ({
     pageNumbers.push(i)
   }
 
+  const renderPageNumber = pageNumbers.map((number) => {
+    if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
+      return (
+        <li
+          key={number}
+          className={classNames(
+            style.pagination__item,
+            currentPage == number ? style.active : null
+          )}
+          onClick={(e) => handlePagination(e, number)}
+        >
+          {number}
+        </li>
+      )
+    } else {
+      return null
+    }
+  })
+
   return (
     <div>
       <ul className={style.pagination}>
-        {pageNumbers.map((number) => (
-          <li key={number} className={style.pagination__item}>
-              <Link to='' onClick={(e) => handlePagination(e, number)}>
-                  {number}
-              </Link>
-          </li>
-        ))}
+        <Button onClick={handlePrevBtn} disabled={currentPage == pageNumbers[0] ? true : false}>Prev</Button>
+        {renderPageNumber}
+        <Button onClick={handleNextBtn} disabled={currentPage == pageNumbers[pageNumbers.length - 1] ? true : false}>Next</Button>
       </ul>
     </div>
   )

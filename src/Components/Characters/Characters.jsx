@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { API_CHARACTERS } from '../../constants/constants'
 import style from './Characters.module.scss'
 import { CharactersList } from './CharactersList/CharactersList'
@@ -16,18 +16,22 @@ const Characters = () => {
     return person.name.toLowerCase().includes(valueInput.toLowerCase())
   })
 
-  const { currentPeople, handlePagination, peoplePerPage, setCurrentPage } =
-    usePagination({ filterPeople })
-
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [valueInput])
+  const {
+    currentPeople,
+    handlePagination,
+    peoplePerPage,
+    handleNextBtn,
+    handlePrevBtn,
+    minPageNumberLimit,
+    maxPageNumberLimit,
+    currentPage,
+  } = usePagination({ filterPeople })
 
   return (
     <div className={style.characters}>
       <h1>Персонажи</h1>
       <div className={style.characters__search}>
-        <SearchField 
+        <SearchField
           setValueInput={setValueInput}
           valueInput={valueInput}
           totalPeople={filterPeople}
@@ -40,6 +44,11 @@ const Characters = () => {
             peoplePerPage={peoplePerPage}
             totalPeople={filterPeople.length}
             handlePagination={handlePagination}
+            handleNextBtn={handleNextBtn}
+            handlePrevBtn={handlePrevBtn}
+            minPageNumberLimit={minPageNumberLimit}
+            maxPageNumberLimit={maxPageNumberLimit}
+            currentPage={currentPage}
           />
         </>
       ) : (

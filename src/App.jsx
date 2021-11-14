@@ -7,7 +7,7 @@ import { routesConfig } from './routes/routesConfig'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={'/reactHarryPotter/'}>
       <Container className='app__container'>
       <Header />
         <Switch>

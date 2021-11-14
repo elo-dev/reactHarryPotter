@@ -1,4 +1,4 @@
-const HP_ROOT = 'http://hp-api.herokuapp.com/api/'
+const HP_ROOT = 'https://hp-api.herokuapp.com/api/'
 const HP_CHARACTERS = 'characters'
 const HP_STUDENTS = '/students'
 const HP_HOUSE = '/house/'

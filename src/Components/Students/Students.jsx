@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { API_CHARACTERS_STUDENTS } from '../../constants/constants'
 import { StudentsList } from './StudentsList/StudentsList'
 import { Loading } from '../Loading/Loading'
@@ -11,7 +11,6 @@ import useGetRecource from '../../hooks/useGetResource'
 import SearchField from '../SearchField/SearchField'
 
 const Students = () => {
-
   const { people } = useGetRecource(API_CHARACTERS_STUDENTS)
   const [valueInput, setValueInput] = useState('')
 
@@ -19,12 +18,16 @@ const Students = () => {
     return person.name.toLowerCase().includes(valueInput.toLowerCase())
   })
 
-  const { currentPeople, handlePagination, peoplePerPage, setCurrentPage } =
-    usePagination({ filterPeople })
-
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [valueInput])
+  const {
+    currentPeople,
+    handlePagination,
+    peoplePerPage,
+    handleNextBtn,
+    handlePrevBtn,
+    minPageNumberLimit,
+    maxPageNumberLimit,
+    currentPage,
+  } = usePagination({ filterPeople })
 
   const history = useHistory()
 
@@ -57,6 +60,11 @@ const Students = () => {
             peoplePerPage={peoplePerPage}
             totalPeople={filterPeople.length}
             handlePagination={handlePagination}
+            handleNextBtn={handleNextBtn}
+            handlePrevBtn={handlePrevBtn}
+            minPageNumberLimit={minPageNumberLimit}
+            maxPageNumberLimit={maxPageNumberLimit}
+            currentPage={currentPage}
           />
         </>
       ) : (
