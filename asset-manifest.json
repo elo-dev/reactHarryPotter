@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/reactHarryPotter/static/css/main.5012a599.chunk.css",
-    "main.js": "/reactHarryPotter/static/js/main.c3a67ef8.chunk.js",
-    "main.js.map": "/reactHarryPotter/static/js/main.c3a67ef8.chunk.js.map",
+    "main.css": "/reactHarryPotter/static/css/main.74aecc43.chunk.css",
+    "main.js": "/reactHarryPotter/static/js/main.615a2a79.chunk.js",
+    "main.js.map": "/reactHarryPotter/static/js/main.615a2a79.chunk.js.map",
     "runtime-main.js": "/reactHarryPotter/static/js/runtime-main.6113cfd1.js",
     "runtime-main.js.map": "/reactHarryPotter/static/js/runtime-main.6113cfd1.js.map",
-    "static/js/2.a90348fd.chunk.js": "/reactHarryPotter/static/js/2.a90348fd.chunk.js",
-    "static/js/2.a90348fd.chunk.js.map": "/reactHarryPotter/static/js/2.a90348fd.chunk.js.map",
+    "static/js/2.5af2d2d4.chunk.js": "/reactHarryPotter/static/js/2.5af2d2d4.chunk.js",
+    "static/js/2.5af2d2d4.chunk.js.map": "/reactHarryPotter/static/js/2.5af2d2d4.chunk.js.map",
     "index.html": "/reactHarryPotter/index.html",
-    "static/css/main.5012a599.chunk.css.map": "/reactHarryPotter/static/css/main.5012a599.chunk.css.map",
-    "static/js/2.a90348fd.chunk.js.LICENSE.txt": "/reactHarryPotter/static/js/2.a90348fd.chunk.js.LICENSE.txt",
+    "static/css/main.74aecc43.chunk.css.map": "/reactHarryPotter/static/css/main.74aecc43.chunk.css.map",
+    "static/js/2.5af2d2d4.chunk.js.LICENSE.txt": "/reactHarryPotter/static/js/2.5af2d2d4.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/reactHarryPotter/static/media/sirona.9a9a57bb.otf",
     "static/media/back.46f9b388.svg": "/reactHarryPotter/static/media/back.46f9b388.svg",
     "static/media/Home.module.scss": "/reactHarryPotter/static/media/dumbledore.5e494545.png",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6113cfd1.js",
-    "static/js/2.a90348fd.chunk.js",
-    "static/css/main.5012a599.chunk.css",
-    "static/js/main.c3a67ef8.chunk.js"
+    "static/js/2.5af2d2d4.chunk.js",
+    "static/css/main.74aecc43.chunk.css",
+    "static/js/main.615a2a79.chunk.js"
   ]
 }
